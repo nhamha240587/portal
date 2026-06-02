@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Allow images from external domains (QR code APIs)
+  async redirects() {
+    return [{ source: '/', destination: '/khoahocduacamuoi', permanent: false }]
+  },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'qr.sepay.vn' },
