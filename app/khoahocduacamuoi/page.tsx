@@ -201,8 +201,28 @@ function SuccessScreen({ type, name, onClose }: { type: 'gift' | 'course'; name:
             </>
           ) : (
             <>
-              <p className="text-gray-600 mb-5 leading-relaxed text-sm">Cô Hạ đã gửi <strong>3 Sai Lầm Khiến Dưa Bị Nhớt & Công Thức Cà Muối Mắm Giòn 7 Ngày</strong> vào email bạn.<br />Kiểm tra hộp thư nhé (cả spam)! 📬</p>
-              <div className="bg-green-50 text-green-800 rounded-xl p-3 text-sm">🎬 Công thức đã được gửi – xem ngay để bắt đầu!</div>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Cô Hạ đã gửi <strong>Công Thức Cà Muối Mắm Giòn 7 Ngày</strong> vào email bạn.<br />
+                Kiểm tra hộp thư nhé (kể cả spam)! 📬
+              </p>
+              <p className="text-gray-500 text-xs mb-3 font-semibold uppercase tracking-wide">Tham gia cộng đồng miễn phí của Cô Hạ:</p>
+              <div className="space-y-2">
+                {[
+                  { icon: '👥', label: 'Nấu ăn cùng Cô Hạ', sub: 'Group tổng – chia sẻ & học hỏi', href: 'https://www.facebook.com/groups/nauancungcoha', color: 'bg-blue-600 hover:bg-blue-700' },
+                  { icon: '📖', label: 'Công thức nấu ăn miễn phí', sub: 'Hàng trăm công thức từ Cô Hạ', href: 'https://www.facebook.com/groups/congthuccoha', color: 'bg-[#006400] hover:bg-[#007a00]' },
+                  { icon: '📺', label: 'YouTube Cô Hạ Dạy Nấu Ăn', sub: 'Video hướng dẫn chi tiết', href: 'https://www.youtube.com/@Cohadaynauan8386/featured', color: 'bg-red-600 hover:bg-red-700' },
+                  { icon: '🎵', label: 'TikTok Cô Hạ', sub: 'Clip ngắn, mẹo nấu ăn hay', href: 'https://www.tiktok.com/@hacasau', color: 'bg-gray-800 hover:bg-gray-900' },
+                ].map(link => (
+                  <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer"
+                    className={`flex items-center gap-3 ${link.color} text-white px-4 py-2.5 rounded-xl transition-colors w-full text-left`}>
+                    <span className="text-xl flex-shrink-0">{link.icon}</span>
+                    <div>
+                      <p className="font-bold text-sm leading-tight">{link.label}</p>
+                      <p className="text-white/70 text-xs">{link.sub}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </>
           )}
           <button onClick={onClose} className="mt-4 text-gray-400 text-sm hover:text-gray-600 underline">Đóng</button>
