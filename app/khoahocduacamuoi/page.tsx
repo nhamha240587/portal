@@ -37,11 +37,12 @@ function useCountdown(hours = 24) {
 }
 
 // ─── YouTube Short embed ──────────────────────────────────────────────────────
-function YTShort({ id, title }: { id: string; title: string }) {
+function YTShort({ id, title, size = 'sm' }: { id: string; title: string; size?: 'sm' | 'lg' }) {
   return (
-    // iframe nằm BÊN TRONG phone frame – không bị che
     <div
-      className="mx-auto w-full max-w-[260px] rounded-[2rem] border-[6px] border-gray-800 shadow-2xl overflow-hidden bg-black"
+      className={`mx-auto w-full rounded-[2rem] border-[6px] border-gray-800 shadow-2xl overflow-hidden bg-black ${
+        size === 'lg' ? 'max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]' : 'max-w-[260px]'
+      }`}
       style={{ aspectRatio: '9/16' }}
     >
       <iframe
@@ -422,7 +423,7 @@ export default function KhoaHocDuaCaMuoi() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10 items-center">
             {/* Video */}
             <div className="flex flex-col items-center gap-3">
-              <YTShort id="tF_SRl4Ue3U" title="Giới thiệu khóa học Dưa Cà Muối" />
+              <YTShort id="tF_SRl4Ue3U" title="Giới thiệu khóa học Dưa Cà Muối" size="lg" />
               <p className="text-sm text-gray-500 italic text-center">📹 Xem trước nội dung khóa học</p>
             </div>
 
