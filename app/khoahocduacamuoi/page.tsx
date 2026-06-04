@@ -327,6 +327,50 @@ export default function KhoaHocDuaCaMuoi() {
         </div>
       </section>
 
+      {/* ══ GALLERY: THÀNH PHẨM ══ */}
+      <section className="py-12 px-4 sm:px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <span className="inline-block border border-[#90EE90] bg-[#f0fff0] text-[#006400] font-bold text-xs px-5 py-1.5 rounded-full tracking-widest mb-3">
+              THÀNH PHẨM
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-800 mb-2">
+              Những Hũ Dưa Cà <span className="text-[#006400]">Giòn Ngon, Đẹp Mắt</span>
+            </h2>
+            <p className="text-gray-400 text-sm sm:text-base max-w-lg mx-auto">
+              Học xong là làm được ngay — đủ món cho bữa cơm Việt
+            </p>
+          </div>
+
+          {/* 3×2 grid đều nhau */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {[
+              { src: '/images/products/bo-suu-tap.jpg',       label: 'Bộ sưu tập dưa cà' },
+              { src: '/images/products/ca-muoi-mam-cay.jpg',  label: 'Cà muối mắm cay' },
+              { src: '/images/products/dua-cu-cai-ca-rot.png',label: 'Dưa củ cải cà rốt' },
+              { src: '/images/products/ca-muoi-xanh.png',     label: 'Cà muối xanh' },
+              { src: '/images/products/sung-muoi.png',        label: 'Sung muối sả tắc' },
+              { src: '/images/products/dua-cai-chua.png',     label: 'Dưa cải muối chua' },
+            ].map(item => (
+              <div key={item.label}
+                className="relative rounded-xl overflow-hidden group shadow-sm"
+                style={{ aspectRatio: '4/3' }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={item.src} alt={item.label}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <p className="absolute bottom-2 left-3 text-white text-xs sm:text-sm font-semibold drop-shadow">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-gray-400 text-xs mt-4">
+            📸 Tất cả đều do học viên tự tay làm sau khóa học
+          </p>
+        </div>
+      </section>
+
       {/* ══ FLOW 1: GIFT FORM ══ */}
       <section className="py-16 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
@@ -374,82 +418,6 @@ export default function KhoaHocDuaCaMuoi() {
                 onSuccess={d => { setGiftName(d.name); setGiftSuccess(true) }} />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ══ DIVIDER ══ */}
-      <div className="max-w-4xl mx-auto px-4 py-2 flex items-center gap-4">
-        <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#90EE90]" />
-        <span className="text-xl">🌿</span>
-        <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#90EE90]" />
-      </div>
-
-      {/* ══ GALLERY: THÀNH PHẨM ══ */}
-      <section className="py-14 px-4 sm:px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-10">
-            <span className="inline-block border border-[#90EE90] bg-[#f0fff0] text-[#006400] font-bold text-xs px-5 py-1.5 rounded-full tracking-widest mb-4">
-              THÀNH PHẨM
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 mb-3">
-              Những Hũ Dưa Cà <span className="text-[#006400]">Giòn Ngon, Đẹp Mắt</span>
-            </h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-base">
-              Học xong là làm được ngay — từ dưa cải đến cà muối mắm, đủ món cho bữa cơm Việt
-            </p>
-          </div>
-
-          {/* Grid ảnh – layout bất đối xứng cho đẹp mắt */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-            {/* Ảnh lớn chiếm 2 cột trên mobile, 1 cột desktop */}
-            {[
-              { src: '/images/products/bo-suu-tap.jpg',      label: 'Bộ sưu tập dưa cà – 6 món',  ratio: '4/3' },
-              { src: '/images/products/ca-muoi-mam-cay.jpg', label: 'Cà muối mắm cay',             ratio: '3/4' },
-              { src: '/images/products/ca-muoi-xanh.png',    label: 'Cà muối xanh ngâm hũ',       ratio: '3/4' },
-              { src: '/images/products/dua-cu-cai-ca-rot.png',label: 'Dưa củ cải cà rốt',         ratio: '4/3' },
-              { src: '/images/products/sung-muoi.png',       label: 'Sung muối sả tắc',            ratio: '4/3' },
-              { src: '/images/products/dua-cai-chua.png',    label: 'Dưa cải muối chua',           ratio: '4/3' },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-green-50 to-green-100 group cursor-pointer shadow-sm"
-                style={{ aspectRatio: item.ratio }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={item.src}
-                  alt={item.label}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                {/* Caption – luôn hiện ở dưới */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/65 to-transparent p-3">
-                  <p className="text-white text-xs sm:text-sm font-semibold drop-shadow">{item.label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Ảnh phụ hàng dưới – 3 ảnh nhỏ ngang */}
-          <div className="grid grid-cols-3 gap-3 sm:gap-4 mt-3 sm:mt-4">
-            {[
-              { src: '/images/products/dua-bap-cai.png',   label: 'Dưa bắp cải cà rốt' },
-              { src: '/images/products/bo-suu-tap-2.jpg',  label: 'Trưng bày bộ sưu tập' },
-              { src: '/images/products/co-ha.png',         label: 'Cô Hạ và bộ sưu tập dưa cà' },
-            ].map(item => (
-              <div key={item.label} className="relative rounded-2xl overflow-hidden bg-green-50 group shadow-sm" style={{ aspectRatio: '1/1' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={item.src} alt={item.label} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2">
-                  <p className="text-white text-xs font-semibold drop-shadow">{item.label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-center text-gray-400 text-sm mt-5">
-            📸 Tất cả đều do học viên Cô Hạ tự tay làm sau khóa học
-          </p>
         </div>
       </section>
 
