@@ -361,6 +361,74 @@ export default function KhoaHocDuaCaMuoi() {
         <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#90EE90]" />
       </div>
 
+      {/* ══ GALLERY: THÀNH PHẨM ══ */}
+      <section className="py-14 px-4 sm:px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-10">
+            <span className="inline-block border border-[#90EE90] bg-[#f0fff0] text-[#006400] font-bold text-xs px-5 py-1.5 rounded-full tracking-widest mb-4">
+              THÀNH PHẨM
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 mb-3">
+              Những Hũ Dưa Cà <span className="text-[#006400]">Giòn Ngon, Đẹp Mắt</span>
+            </h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-base">
+              Học xong là làm được ngay — từ dưa cải đến cà muối mắm, đủ món cho bữa cơm Việt
+            </p>
+          </div>
+
+          {/* Grid ảnh */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+            {[
+              { src: '/images/products/bo-suu-tap.jpg',    label: 'Bộ sưu tập – 6 món trong khóa học', big: true },
+              { src: '/images/products/ca-muoi-mam.jpg',   label: 'Cà muối mắm',                       big: false },
+              { src: '/images/products/dua-cu-cai.jpg',    label: 'Dưa củ cải cà rốt',                 big: false },
+              { src: '/images/products/ca-muoi-cay.jpg',   label: 'Cà muối mắm cay',                   big: false },
+              { src: '/images/products/dua-ca-muoi.jpg',   label: 'Dưa cà muối',                       big: false },
+              { src: '/images/products/dua-cai-chua.jpg',  label: 'Dưa cải muối chua',                 big: false },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="relative rounded-2xl overflow-hidden bg-gray-100 group cursor-pointer"
+                style={{ aspectRatio: '4/3' }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.src}
+                  alt={item.label}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={e => {
+                    // Nếu chưa có ảnh → hiện placeholder đẹp
+                    const el = e.currentTarget
+                    el.style.display = 'none'
+                    const parent = el.parentElement
+                    if (parent && !parent.querySelector('.placeholder')) {
+                      const ph = document.createElement('div')
+                      ph.className = 'placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-green-50 to-green-100'
+                      ph.innerHTML = '<span style="font-size:3rem">🥒</span>'
+                      parent.appendChild(ph)
+                    }
+                  }}
+                />
+                {/* Caption gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-white text-sm font-semibold drop-shadow">{item.label}</p>
+                </div>
+                {/* Label luôn hiện (mobile) */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/55 to-transparent p-2.5 md:hidden">
+                  <p className="text-white text-xs font-semibold">{item.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-gray-400 text-sm mt-6">
+            📸 Tất cả đều do học viên của Cô Hạ tự tay làm sau khóa học
+          </p>
+        </div>
+      </section>
+
       {/* ══ FLOW 2: COURSE ══ */}
       <section ref={courseRef} id="khoa-hoc" className="py-16 px-4 sm:px-6 scroll-mt-4">
         <div className="max-w-5xl mx-auto">
