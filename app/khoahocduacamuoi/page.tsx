@@ -310,43 +310,35 @@ export default function KhoaHocDuaCaMuoi() {
             </p>
           </div>
 
-          {/* Hàng 1: 1 ảnh lớn (2 cột) + 2 ảnh nhỏ */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
-            {/* Ảnh lớn – collection shot */}
-            <div className="col-span-2 sm:col-span-1 relative rounded-2xl overflow-hidden group shadow-md" style={{ aspectRatio: '4/3' }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/products/bo-suu-tap.jpg" alt="Bộ sưu tập dưa cà – 6 món"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
-              <p className="absolute bottom-3 left-3 text-white text-sm font-bold drop-shadow">🏆 Bộ sưu tập 6 món dưa cà</p>
-            </div>
-            {/* 2 ảnh dọc */}
+          {/* Hàng 1: 3 ảnh cùng chiều cao cố định */}
+          <div className="grid grid-cols-3 gap-3 mb-3 h-64 sm:h-80">
             {[
-              { src: '/images/products/ca-muoi-mam-cay.jpg', label: 'Cà muối mắm cay' },
-              { src: '/images/products/dua-cu-cai-ca-rot.png', label: 'Dưa củ cải cà rốt' },
+              { src: '/images/products/bo-suu-tap.jpg',        label: '🏆 Bộ sưu tập 6 món dưa cà',  objPos: 'object-center' },
+              { src: '/images/products/ca-muoi-mam-cay.jpg',   label: 'Cà muối mắm cay',             objPos: 'object-top' },
+              { src: '/images/products/dua-cu-cai-ca-rot.png', label: 'Dưa củ cải cà rốt',           objPos: 'object-center' },
             ].map(item => (
-              <div key={item.label} className="relative rounded-2xl overflow-hidden group shadow-md" style={{ aspectRatio: '3/4' }}>
+              <div key={item.label} className="relative rounded-2xl overflow-hidden group shadow-md h-full">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={item.src} alt={item.label}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <p className="absolute bottom-2 left-2.5 text-white text-xs font-semibold drop-shadow">{item.label}</p>
+                  className={`w-full h-full object-cover ${item.objPos} group-hover:scale-105 transition-transform duration-500`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+                <p className="absolute bottom-2.5 left-3 text-white text-xs sm:text-sm font-semibold drop-shadow">{item.label}</p>
               </div>
             ))}
           </div>
 
-          {/* Hàng 2: 4 ảnh đều nhau */}
+          {/* Hàng 2: 4 ảnh vuông đều nhau */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
-              { src: '/images/products/ca-muoi-xanh.png',    label: 'Cà muối xanh' },
-              { src: '/images/products/sung-muoi.png',        label: 'Sung muối sả tắc' },
-              { src: '/images/products/dua-bap-cai.png',      label: 'Dưa bắp cải' },
-              { src: '/images/products/dua-cai-chua.png',     label: 'Dưa cải muối chua' },
+              { src: '/images/products/ca-muoi-xanh.png',  label: 'Cà muối xanh' },
+              { src: '/images/products/sung-muoi.png',      label: 'Sung muối sả tắc' },
+              { src: '/images/products/dua-bap-cai.png',    label: 'Dưa bắp cải' },
+              { src: '/images/products/dua-cai-chua.png',   label: 'Dưa cải muối chua' },
             ].map(item => (
               <div key={item.label} className="relative rounded-xl overflow-hidden group shadow-sm" style={{ aspectRatio: '1/1' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={item.src} alt={item.label}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <p className="absolute bottom-2 left-2 text-white text-xs font-semibold drop-shadow">{item.label}</p>
               </div>
