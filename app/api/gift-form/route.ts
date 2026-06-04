@@ -18,13 +18,16 @@ export async function POST(req: NextRequest) {
 
     const id = await insertGiftLead({ name: name.trim(), email: email.trim(), phone: phone.trim() })
 
-    // Non-blocking
-    Promise.all([
+    // Chờ email gửi xong + update flag trước khi return
+    await Promise.all([
       sendGiftEmail({ name: name.trim(), email: email.trim() })
         .then(() => markEmailSent('gift_leads', id))
-        .catch(console.error),
+        .catch(err => {
+          console.error('[gift-form] Email send error:', err)
+          throw err
+        }),
       notifyGiftLead({ name: name.trim(), email: email.trim(), phone: phone.trim() })
-        .catch(console.error),
+        .catch(err => console.error('[gift-form] Telegram notify error:', err)),
     ])
 
     return NextResponse.json({ success: true })
