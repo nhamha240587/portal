@@ -21,9 +21,11 @@ export async function sendGiftEmail(to: { name: string; email: string }) {
 
     <!-- HEADER -->
     <div style="background:linear-gradient(135deg,#003200,#006400);padding:36px 32px;text-align:center;">
-      <p style="font-size:40px;margin:0 0 8px;">🥒</p>
+      <p style="font-size:40px;margin:0 0 8px;">👩‍🍳</p>
       <h1 style="color:#fff;margin:0;font-size:26px;font-weight:800;">HaCo Food – Bếp Cô Hạ</h1>
-      <p style="color:#90EE90;margin:6px 0 0;font-size:14px;">khoaduacamuoi.hacofood.vn</p>
+      <p style="margin:6px 0 0;font-size:14px;">
+        <a href="https://khoaduacamuoi.hacofood.vn" style="color:#ffffff;opacity:0.85;text-decoration:underline;">khoaduacamuoi.hacofood.vn</a>
+      </p>
     </div>
 
     <!-- BODY -->
