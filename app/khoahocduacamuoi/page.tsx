@@ -200,8 +200,8 @@ function SuccessScreen({ type, name, onClose }: { type: 'gift' | 'course'; name:
             </>
           ) : (
             <>
-              <p className="text-gray-600 mb-5 leading-relaxed text-sm">Cô Hạ đã gửi <strong>video Cà Muối Mắm</strong> vào email bạn.<br />Kiểm tra hộp thư nhé (cả spam)! 📬</p>
-              <div className="bg-green-50 text-green-800 rounded-xl p-3 text-sm">🎬 Video hướng dẫn đã được gửi – xem ngay để bắt đầu!</div>
+              <p className="text-gray-600 mb-5 leading-relaxed text-sm">Cô Hạ đã gửi <strong>3 Sai Lầm Khiến Dưa Bị Nhớt & Công Thức Cà Muối Mắm Giòn 7 Ngày</strong> vào email bạn.<br />Kiểm tra hộp thư nhé (cả spam)! 📬</p>
+              <div className="bg-green-50 text-green-800 rounded-xl p-3 text-sm">🎬 Công thức đã được gửi – xem ngay để bắt đầu!</div>
             </>
           )}
           <button onClick={onClose} className="mt-4 text-gray-400 text-sm hover:text-gray-600 underline">Đóng</button>
@@ -263,13 +263,12 @@ export default function KhoaHocDuaCaMuoi() {
           {/* Headline */}
           <div className="text-center mb-8">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
-              Bí Quyết Làm<br />
-              <span className="text-[#90EE90]">Dưa Cà Muối Ngon</span><br />
-              Chuẩn Vị Từ Cô Hạ
+              Tại Sao Dưa Của Bạn<br />
+              <span className="text-[#90EE90]">Bị Nhớt, Mau Hỏng, Màu Xỉn?</span>
             </h1>
             <p className="mt-4 text-green-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-              Từ dưa cải bẹ, dưa góp, cà muối mắm đến sung cà –<br className="hidden sm:block" />
-              học một lần, làm ngon mãi mãi. Dùng cho gia đình hoặc kinh doanh!
+              Vì bạn chưa biết <strong className="text-yellow-300">5 Bí Quyết Muối Chuẩn Vị</strong> của Cô Hạ —<br className="hidden sm:block" />
+              Phương pháp giúp 149+ học viên làm được ngay từ lần đầu tiên
             </p>
           </div>
 
@@ -290,7 +289,7 @@ export default function KhoaHocDuaCaMuoi() {
           <div className="flex justify-center">
             <button onClick={scrollToCourse}
               className="bg-white text-[#006400] font-bold text-lg px-8 py-4 rounded-2xl shadow-lg hover:bg-green-50 transition-colors">
-              Xem khóa học ngay →
+              Xem Hệ Thống 5 Bí Quyết →
             </button>
           </div>
         </div>
@@ -381,7 +380,7 @@ export default function KhoaHocDuaCaMuoi() {
               Nhận Ngay Quà Tặng <span className="text-[#006400]">MIỄN PHÍ</span> Từ Cô Hạ
             </h2>
             <p className="text-gray-500 text-base max-w-xl mx-auto">
-              Điền thông tin để nhận <strong>video làm Cà Muối Mắm</strong> – gửi vào email ngay lập tức!
+              Điền thông tin để nhận <strong>"3 Sai Lầm Khiến Dưa Bị Nhớt & Công Thức Cà Muối Mắm Giòn 7 Ngày Của Cô Hạ"</strong> – gửi vào email ngay lập tức!
             </p>
           </div>
 
@@ -391,7 +390,7 @@ export default function KhoaHocDuaCaMuoi() {
             <div className="flex flex-col items-center gap-4">
               <YTShort id="hv52ihJTWKU" title="Video Cà Muối Mắm miễn phí" />
               <p className="text-sm text-gray-500 text-center italic">
-                🎬 Preview video quà tặng – nhận full video qua email!
+                🎬 Preview video quà tặng – nhận full công thức qua email!
               </p>
             </div>
 
@@ -400,10 +399,10 @@ export default function KhoaHocDuaCaMuoi() {
               {/* Benefits */}
               <div className="grid grid-cols-2 gap-3 mb-6">
                 {[
-                  { icon: '🎬', title: 'Video hướng dẫn', desc: 'Cà muối mắm A-Z' },
-                  { icon: '📋', title: 'Công thức chi tiết', desc: 'Tỷ lệ chuẩn, dễ làm' },
-                  { icon: '📧', title: 'Gửi vào email ngay', desc: 'Nhận trong vài giây' },
-                  { icon: '🆓', title: 'Miễn phí 100%', desc: 'Không điều kiện' },
+                  { icon: '🚫', title: '3 sai lầm khiến dưa bị nhớt', desc: 'Tránh ngay từ lần đầu' },
+                  { icon: '✅', title: 'Công thức tỷ lệ nước ngâm chuẩn', desc: 'Tỷ lệ chuẩn, dễ làm' },
+                  { icon: '⚡', title: 'Gửi vào email trong 60 giây', desc: 'Nhận ngay lập tức' },
+                  { icon: '🆓', title: 'Không cần trả phí', desc: 'Miễn phí hoàn toàn' },
                 ].map(b => (
                   <div key={b.title} className="flex items-start gap-2.5 bg-green-50 rounded-xl p-3">
                     <span className="text-xl">{b.icon}</span>
@@ -414,7 +413,7 @@ export default function KhoaHocDuaCaMuoi() {
                   </div>
                 ))}
               </div>
-              <LeadForm ctaText="🎁 Gửi video cho tôi ngay!" ctaColor="green"
+              <LeadForm ctaText="🎁 Gửi Công Thức Cho Tôi Ngay!" ctaColor="green"
                 onSuccess={d => { setGiftName(d.name); setGiftSuccess(true) }} />
             </div>
           </div>
@@ -430,12 +429,13 @@ export default function KhoaHocDuaCaMuoi() {
               Khóa học chuyên sâu
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
-              Dưa Cà Muối Chuyên Sâu –<br />
+              Hệ Thống 5 Bí Quyết Muối Chuẩn Vị –<br />
               <span className="text-[#006400]">Từ Gia Đình Đến Kinh Doanh</span>
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-base leading-relaxed">
-              Khóa học bài bản nhất về dưa cà muối. Cô Hạ dạy từng bước, từng công thức –
-              bạn học xong là làm được ngay, ngon như hàng bán.
+              Cô Hạ đã dạy <strong>149+ học viên</strong> — hơn 90% làm được ngay trong tuần đầu tiên.<br />
+              Phương pháp của Cô Hạ khác ở chỗ: dạy cả <strong>LÝ DO</strong> đằng sau từng bước —
+              không chỉ dạy làm theo, mà dạy để bạn <strong>HIỂU và tự điều chỉnh.</strong>
             </p>
           </div>
 
@@ -449,6 +449,20 @@ export default function KhoaHocDuaCaMuoi() {
 
             {/* Course content */}
             <div className="space-y-5">
+
+              {/* Pain Points */}
+              <div className="bg-red-50 rounded-2xl p-5 border border-red-200">
+                <h3 className="font-bold text-red-700 text-base mb-3">❌ Bạn có đang gặp những vấn đề này không?</h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li className="flex items-start gap-2"><span className="text-red-500 mt-0.5">•</span><span>Làm dưa xong bị nhớt, có mùi lạ → không ai dám ăn</span></li>
+                  <li className="flex items-start gap-2"><span className="text-red-500 mt-0.5">•</span><span>Không biết tỷ lệ nước muối chuẩn → lần nào cũng phải đoán mò</span></li>
+                  <li className="flex items-start gap-2"><span className="text-red-500 mt-0.5">•</span><span>Màu dưa xỉn, trông không ngon mắt</span></li>
+                  <li className="flex items-start gap-2"><span className="text-red-500 mt-0.5">•</span><span>Để vài ngày là mềm, không giòn</span></li>
+                  <li className="flex items-start gap-2"><span className="text-red-500 mt-0.5">•</span><span>Muốn bán nhưng không tự tin vào chất lượng</span></li>
+                </ul>
+                <p className="mt-3 text-sm font-semibold text-[#006400]">✅ Tất cả những vấn đề trên đều có giải pháp trong khóa học này.</p>
+              </div>
+
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
                 <h3 className="font-bold text-gray-800 text-lg mb-4">📚 Bạn sẽ học được gì?</h3>
                 <ul className="space-y-3">
@@ -470,15 +484,71 @@ export default function KhoaHocDuaCaMuoi() {
                 </ul>
               </div>
 
+              {/* Value Stack */}
               <div className="bg-[#f0fff0] rounded-2xl p-5 border border-[#90ee90]">
-                <h3 className="font-bold text-[#006400] text-base mb-3">🎁 Bonus đi kèm</h3>
-                <ul className="space-y-2">
-                  {['Công thức nước ngâm chuẩn tỷ lệ', 'Hướng dẫn chọn nguyên liệu tươi', 'Bí quyết bảo quản giữ lâu', 'Group hỗ trợ học viên 24/7', 'Cập nhật công thức mới miễn phí'].map(i => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-[#006400]">
-                      <span className="text-[#007a00] font-bold text-base">✓</span>{i}
-                    </li>
-                  ))}
+                <h3 className="font-bold text-[#006400] text-base mb-4">🎁 NHỮNG GÌ BẠN NHẬN ĐƯỢC<br /><span className="text-sm font-normal text-gray-500">(Tổng trị giá: 1.095.000đ)</span></h3>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#007a00] font-bold text-base flex-shrink-0">✅</span>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start gap-2">
+                        <span className="font-semibold text-gray-800">5 Video Công Thức Dưa Cà Muối Từ A-Z</span>
+                        <span className="text-[#006400] font-bold whitespace-nowrap">399.000đ</span>
+                      </div>
+                      <p className="text-gray-400 text-xs">(Dưa cải, dưa góp, sung muối, củ cải, cà muối mắm)</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#007a00] font-bold text-base flex-shrink-0">✅</span>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start gap-2">
+                        <span className="font-semibold text-gray-800">"Bảng Tỷ Lệ Nước Ngâm Chuẩn Vị 5 Món"</span>
+                        <span className="text-[#006400] font-bold whitespace-nowrap">99.000đ</span>
+                      </div>
+                      <p className="text-gray-400 text-xs">Không bao giờ nhầm tỷ lệ — dùng mãi mãi</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#007a00] font-bold text-base flex-shrink-0">✅</span>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start gap-2">
+                        <span className="font-semibold text-gray-800">"Checklist 12 Dấu Hiệu Chọn Nguyên Liệu Tươi"</span>
+                        <span className="text-[#006400] font-bold whitespace-nowrap">99.000đ</span>
+                      </div>
+                      <p className="text-gray-400 text-xs">Mua đúng ngay từ lần đầu tại chợ</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#007a00] font-bold text-base flex-shrink-0">✅</span>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start gap-2">
+                        <span className="font-semibold text-gray-800">"Bí Quyết Bảo Quản Giữ Dưa Giòn 30 Ngày"</span>
+                        <span className="text-[#006400] font-bold whitespace-nowrap">99.000đ</span>
+                      </div>
+                      <p className="text-gray-400 text-xs">Không cần tủ lạnh — phù hợp bán hàng</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#007a00] font-bold text-base flex-shrink-0">✅</span>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start gap-2">
+                        <span className="font-semibold text-gray-800">Group Hỗ Trợ Học Viên 24/7 mãi mãi</span>
+                        <span className="text-[#006400] font-bold whitespace-nowrap">399.000đ</span>
+                      </div>
+                      <p className="text-gray-400 text-xs">Hỏi gì cũng có người trả lời</p>
+                    </div>
+                  </li>
                 </ul>
+                <div className="mt-4 pt-3 border-t border-[#90ee90]">
+                  <div className="flex justify-between text-sm text-gray-500 mb-1">
+                    <span>Tổng giá trị:</span>
+                    <span className="line-through">1.095.000đ</span>
+                  </div>
+                  <div className="flex justify-between font-extrabold text-base text-[#006400]">
+                    <span>Giá hôm nay:</span>
+                    <span>chỉ 138.000đ ← Tiết kiệm 957.000đ</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -513,7 +583,7 @@ export default function KhoaHocDuaCaMuoi() {
             <div>
               {/* Countdown */}
               <div className="bg-red-600 text-white rounded-2xl p-4 mb-4 text-center">
-                <p className="text-sm text-red-100 mb-2">⏰ Giá ưu đãi kết thúc sau:</p>
+                <p className="text-sm text-red-100 mb-2">⚡ Giá Đặc Biệt Chỉ Còn:</p>
                 <div className="flex justify-center gap-3">
                   {[{ v: countdown.h.toString().padStart(2, '0'), l: 'Giờ' }, { v: countdown.m.toString().padStart(2, '0'), l: 'Phút' }, { v: countdown.s.toString().padStart(2, '0'), l: 'Giây' }].map(({ v, l }) => (
                     <div key={l} className="bg-white/20 rounded-lg px-3 py-2 min-w-[52px]">
@@ -522,6 +592,7 @@ export default function KhoaHocDuaCaMuoi() {
                     </div>
                   ))}
                 </div>
+                <p className="text-xs text-red-200 mt-2">(Sau khi hết ưu đãi → giá trở về 299.000đ)</p>
               </div>
 
               <div className="bg-white rounded-2xl shadow-2xl border-2 border-[#90ee90] overflow-hidden">
@@ -553,8 +624,12 @@ export default function KhoaHocDuaCaMuoi() {
               {/* Cam kết */}
               <div className="mt-4 bg-[#f0fff0] border border-[#90ee90] rounded-xl p-4 text-center">
                 <div className="text-2xl mb-1">🌟</div>
-                <p className="font-bold text-[#006400] text-sm">Cam kết học trọn đời</p>
-                <p className="text-[#007a00] text-xs mt-1">Truy cập video & tài liệu mãi mãi, cập nhật công thức mới miễn phí</p>
+                <p className="font-bold text-[#006400] text-sm">Cam Kết Đầu Ra Của Cô Hạ</p>
+                <p className="text-[#007a00] text-xs mt-1 leading-relaxed">
+                  Sau khi học xong, bạn tự làm được ít nhất 3 món dưa cà muối giòn ngon chuẩn vị.<br />
+                  Nếu làm đúng theo hướng dẫn mà chưa được — Cô Hạ hỗ trợ 1-1 trong group đến khi làm được.<br />
+                  Truy cập video & tài liệu mãi mãi, cập nhật công thức mới miễn phí.
+                </p>
               </div>
             </div>
           </div>
@@ -584,7 +659,7 @@ export default function KhoaHocDuaCaMuoi() {
               </h2>
               <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
                 <p><strong className="text-gray-800">Cô Hạ Dạy Nấu Ăn</strong> là thương hiệu thuộc HACO Food, do chính Cô Hạ trực tiếp đứng lớp và truyền nghề. Hơn 6 năm qua, Cô Hạ đã dạy hàng nghìn học viên cách làm những món truyền thống đậm vị Việt, từ bữa cơm gia đình hằng ngày đến các món dưa cà muối giòn ngon, sạch và an toàn cho cả nhà.</p>
-                <p>Trong khoá học Dưa Cà Muối, Cô Hạ chia sẻ công thức chuẩn đã được đúc kết qua nhiều năm, hướng dẫn từng bước dễ làm tại nhà, để ai cũng có thể tự tay muối được hũ dưa, hũ cà giòn thơm, để được lâu mà vẫn giữ trọn hương vị quê nhà.</p>
+                <p>Trong khoá học Dưa Cà Muối, Cô Hạ chia sẻ <strong>Hệ Thống 5 Bí Quyết Muối Chuẩn Vị</strong> đã được đúc kết qua nhiều năm, hướng dẫn từng bước dễ làm tại nhà, để ai cũng có thể tự tay muối được hũ dưa, hũ cà giòn thơm, để được lâu mà vẫn giữ trọn hương vị quê nhà.</p>
                 <p className="italic text-[#006400] font-medium border-l-4 border-[#90EE90] pl-4">"Cô Hạ tin rằng một bữa cơm Việt trọn vẹn luôn cần thêm chút dưa, chút cà, và đó cũng là cách giữ lửa căn bếp gia đình bằng những điều giản dị nhất."</p>
               </div>
               <div className="flex flex-wrap gap-2 mt-6">
@@ -603,6 +678,8 @@ export default function KhoaHocDuaCaMuoi() {
           <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">❓ Câu hỏi thường gặp</h2>
           <div className="space-y-3">
             {[
+              { q: 'Tôi chưa bao giờ làm dưa, học được không?', a: 'Được! Khóa học thiết kế cho người hoàn toàn mới bắt đầu. Nhiều học viên của Cô Hạ chưa bao giờ làm dưa trước đó — sau tuần đầu họ đã có hũ dưa giòn ngon để cả nhà ăn thử.' },
+              { q: 'Sau bao lâu thì làm được?', a: 'Ngay sau bài học đầu tiên bạn đã có thể làm được món cơ bản. Phần lớn học viên hoàn thành cả 5 món trong vòng 2 tuần.' },
               { q: 'Khóa học này học ở đâu?', a: 'Sau khi thanh toán, bạn được mời vào nhóm Facebook riêng của học viên. Toàn bộ video bài giảng có trong group, xem được trên điện thoại hoặc máy tính bất cứ lúc nào.' },
               { q: 'Tôi không biết nấu ăn có học được không?', a: 'Hoàn toàn được! Cô Hạ dạy từng bước từ cơ bản. Chưa biết nấu ăn vẫn làm được ngay sau khi xem video.' },
               { q: 'Thanh toán như thế nào?', a: 'Chuyển khoản qua QR code hoặc chuyển khoản thủ công. Sau khi chuyển, hệ thống tự xác nhận và gửi link group qua email trong vài phút.' },
@@ -628,11 +705,16 @@ export default function KhoaHocDuaCaMuoi() {
         <div className="max-w-2xl mx-auto">
           <div className="text-5xl mb-4">🥒</div>
           <h2 className="text-2xl sm:text-3xl font-extrabold mb-4">
-            Bắt đầu hành trình làm dưa cà ngon<br />cùng Cô Hạ ngay hôm nay!
+            Còn chờ gì nữa? Mỗi ngày bạn chưa học là một ngày:
           </h2>
+          <ul className="text-green-200 mb-6 text-base text-left max-w-md mx-auto space-y-2">
+            <li className="flex items-start gap-2"><span className="text-yellow-300 mt-0.5">•</span><span>Tiếp tục đoán mò tỷ lệ → dưa vẫn bị nhớt</span></li>
+            <li className="flex items-start gap-2"><span className="text-yellow-300 mt-0.5">•</span><span>Bỏ lỡ cơ hội có thêm thu nhập từ dưa cà muối</span></li>
+            <li className="flex items-start gap-2"><span className="text-yellow-300 mt-0.5">•</span><span>Vẫn phải mua ngoài thay vì tự làm ngon hơn, sạch hơn, rẻ hơn</span></li>
+          </ul>
           <p className="text-green-200 mb-8 text-lg">
-            Chỉ <strong className="text-yellow-300 text-2xl">138.000đ</strong> – ít hơn một bữa ăn ngoài –<br />
-            bạn có cả kho bí quyết làm dưa cà cho cả đời!
+            Chỉ <strong className="text-yellow-300 text-2xl">138.000đ</strong> — ít hơn 1 bữa ăn ngoài hàng —<br />
+            bạn có <strong className="text-yellow-300">Hệ Thống 5 Bí Quyết Muối Chuẩn Vị</strong> cho cả đời!
           </p>
           <button onClick={scrollToCourse}
             className="bg-white text-[#006400] font-extrabold text-xl px-10 py-5 rounded-2xl shadow-xl hover:bg-green-50 transition-colors">
