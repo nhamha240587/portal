@@ -47,24 +47,33 @@ export async function sendGiftEmail(to: { name: string; email: string }) {
 
       <!-- CỘNG ĐỒNG -->
       <div style="margin:20px 0;">
-        <h3 style="color:#006400;font-size:16px;margin-bottom:12px;">👥 Tham gia cộng đồng miễn phí của Cô Hạ:</h3>
+        <h3 style="color:#006400;font-size:16px;margin-bottom:12px;">&#128101; Tham gia cộng đồng <strong>MIỄN PHÍ</strong> của Cô Hạ:</h3>
         <table style="width:100%;border-collapse:collapse;">
           ${[
-            { icon: '👥', name: 'Nấu ăn cùng Cô Hạ', desc: 'Group tổng – chia sẻ & học hỏi', href: 'https://www.facebook.com/groups/nauancungcoha', color: '#1877F2' },
-            { icon: '📖', name: 'Công thức nấu ăn miễn phí', desc: 'Hàng trăm công thức từ Cô Hạ', href: 'https://www.facebook.com/groups/congthuccoha', color: '#006400' },
-            { icon: '🍜', name: 'Nấu ăn kinh doanh', desc: 'Bí quyết kinh doanh F&B', href: 'https://www.facebook.com/groups/nauankinhdoanh', color: '#006400' },
-            { icon: '🚀', name: 'Khởi nghiệp F&B', desc: 'Cộng đồng khởi nghiệp ẩm thực', href: 'https://www.facebook.com/groups/fnbcoha', color: '#006400' },
-            { icon: '📺', name: 'YouTube Cô Hạ Dạy Nấu Ăn', desc: 'Video hướng dẫn chi tiết', href: 'https://www.youtube.com/@Cohadaynauan8386/featured', color: '#FF0000' },
-            { icon: '🎵', name: 'TikTok Cô Hạ', desc: 'Clip ngắn, mẹo nấu ăn hay', href: 'https://www.tiktok.com/@hacasau', color: '#010101' },
+            { tag: 'FB', tagColor: '#1877F2', name: 'Nấu ăn cùng Cô Hạ',         desc: 'Group tổng – chia sẻ kinh nghiệm nấu ăn',  href: 'https://www.facebook.com/groups/nauancungcoha' },
+            { tag: 'FB', tagColor: '#1877F2', name: 'Công thức nấu ăn miễn phí',  desc: 'Hàng trăm công thức từ Cô Hạ',            href: 'https://www.facebook.com/groups/congthuccoha' },
+            { tag: 'FB', tagColor: '#1877F2', name: 'Nấu ăn kinh doanh',          desc: 'Bí quyết kinh doanh ẩm thực F&B',         href: 'https://www.facebook.com/groups/nauankinhdoanh' },
+            { tag: 'FB', tagColor: '#1877F2', name: 'Khởi nghiệp F&B',            desc: 'Cộng đồng khởi nghiệp ẩm thực',          href: 'https://www.facebook.com/groups/fnbcoha' },
+            { tag: 'YT', tagColor: '#FF0000', name: 'YouTube Cô Hạ Dạy Nấu Ăn',  desc: 'Video hướng dẫn chi tiết, dễ làm theo',  href: 'https://www.youtube.com/@Cohadaynauan8386/featured' },
+            { tag: 'TT', tagColor: '#010101', name: 'TikTok Cô Hạ',               desc: 'Clip ngắn, mẹo nấu ăn hay mỗi ngày',     href: 'https://www.tiktok.com/@hacasau' },
           ].map(l => `
           <tr>
-            <td style="padding:6px 0;">
-              <a href="${l.href}" style="display:flex;align-items:center;gap:12px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;text-decoration:none;">
-                <span style="font-size:20px;">${l.icon}</span>
-                <span>
-                  <strong style="display:block;color:#111827;font-size:13px;">${l.name}</strong>
-                  <span style="color:#6b7280;font-size:12px;">${l.desc}</span>
-                </span>
+            <td style="padding:5px 0;">
+              <a href="${l.href}" style="display:table;width:100%;background:#f8fffe;border:1px solid #d1fae5;border-radius:10px;padding:0;text-decoration:none;box-sizing:border-box;">
+                <table style="width:100%;border-collapse:collapse;">
+                  <tr>
+                    <td style="width:44px;padding:12px 0 12px 14px;vertical-align:middle;">
+                      <span style="display:inline-block;background:${l.tagColor};color:#fff;font-size:10px;font-weight:800;padding:3px 6px;border-radius:4px;letter-spacing:0.5px;">${l.tag}</span>
+                    </td>
+                    <td style="padding:12px 14px 12px 8px;vertical-align:middle;">
+                      <strong style="display:block;color:#111827;font-size:13px;margin-bottom:2px;">${l.name}</strong>
+                      <span style="color:#6b7280;font-size:12px;">${l.desc}</span>
+                    </td>
+                    <td style="padding:12px 14px 12px 0;vertical-align:middle;white-space:nowrap;">
+                      <span style="background:#dcfce7;color:#166534;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;">MIỄN PHÍ</span>
+                    </td>
+                  </tr>
+                </table>
               </a>
             </td>
           </tr>`).join('')}
