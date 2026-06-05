@@ -1,0 +1,16 @@
+name: Email Sequence Cron
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Chạy mỗi giờ đúng
+  workflow_dispatch:      # Cho phép chạy tay khi cần test
+
+jobs:
+  send-emails:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger email sequence
+        run: |
+          curl -s -X GET \
+            -H "x-api-key: ${{ secrets.EMAIL_SEQUENCE_API_KEY }}" \
+            https://khoaduacamuoi.hacofood.vn/api/email-sequences/send
